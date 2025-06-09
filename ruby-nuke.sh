@@ -1,0 +1,1 @@
+sudo pacman -Rns ruby && rm -rf ~/.gem ~/.local/gem ~/.gemrc && sudo pacman -Syu --noconfirm rbenv ruby-build base-devel && echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc && echo 'eval "$(rbenv init - bash)"' >> ~/.bashrc && source ~/.bashrc && rbenv install 3.3.0 && rbenv global 3.3.0 && gem install bundler && echo '✅ Ruby, gem, and bundler now working with rbenv'
