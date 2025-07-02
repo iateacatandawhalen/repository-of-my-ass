@@ -39,3 +39,5 @@ echo
 echo "With great power comes great responsibility. Take care and use these files responsibly."
 echo
 echo "All done. Converted files are in $OUT_DIR"
+
+//fuck 
