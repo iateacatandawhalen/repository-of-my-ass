@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# Entry point for your Bash stdlib
+# import function requires a directory argument and sources library-manifest in that directory
+
+import() {
+    local target_dir="$1"
+
+    if [[ -z "$target_dir" ]]; then
+        echo "import: You must provide a directory containing a library-manifest."
+        return 1
+    fi
+
+    local manifest="$target_dir/library-manifest"
+
+    if [[ ! -d "$target_dir" ]]; then
+        echo "import: Directory '$target_dir' does not exist."
+        return 1
+    fi
+
+    if [[ -f "$manifest" ]]; then
+        source "$manifest"
+    else
+        echo "import: No library-manifest found in '$target_dir'."
+        return 1
+    fi
+}
